@@ -6,6 +6,7 @@
   "dependencies": {
     "@aws-amplify/auth": "^3.4.21",
     "@aws-amplify/core": "^3.8.13",
+    "@aws-amplify/datastore": "^2.9.7",
     "undefined": "^0.1.0"
   },
   "devDependencies": {
