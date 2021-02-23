@@ -85,7 +85,7 @@ Save and deploy, wait a little bit
 
 Once deployed, AWS Amplify will be being to deploy the frontend.
 Wait for it to complete it deploy.
-![](docs/get_started-004.png)
+![](docs/get_started-005.png)
 
 Now we can procced to creating our backend.
 
