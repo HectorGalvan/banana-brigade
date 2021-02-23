@@ -52,20 +52,20 @@ Visit the url [http://localhost:8080/](http://localhost:8080/)
 We want to use AWS Amplify both for hosting our frontend and creating our backend via the Admin UI.
 We will select `Get Started` for Host your Web app
 
-![](docs/get_started-000.png){:width="50%"}
+<img src='docs/get_started-000.png' width='60%' />
 
 #### 1.2 Choose existing frontend from Github Repo
 
 We are going to choose Github
 
-![](docs/get_started-001.png){:width="50%"}
+<img src='docs/get_started-001.png' width='60%' />
 
 #### 1.3 Authorize and Connect
 
 Authorize Github access by logging into your Github Account.
 Choose the repo. In this case, for me it is omenking/banana-brigade
 
-![](docs/get_started-002.png){:width="50%"}
+<img src='docs/get_started-002.png' width='60%' />
 
 #### 1.4 Name app and proceed
 
@@ -73,19 +73,19 @@ We'll name our app banana-brigade. Our repo doesn't have amplify build
 file. No worries since we'll just go with the default settings and
 proceed forward
 
-![](docs/get_started-003.png){:width="50%"}
+<img src='docs/get_started-003.png' width='60%' />
 
 #### 1.5 Save and deploy
 
 Save and deploy, wait a little bit
 
-![](docs/get_started-004.png){:width="50%"}
+<img src='docs/get_started-004.png' width='60%' />
 
 #### 1.6 Wait for the frontend to deploy
 
 Once deployed, AWS Amplify will be being to deploy the frontend.
 Wait for it to complete it deploy.
-<img src='docs/get_started-005.png' width='50%' />
+<img src='docs/get_started-005.png' width='60%' />
 
 Now we can procced to creating our backend.
 
