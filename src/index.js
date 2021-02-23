@@ -20,8 +20,44 @@ console.log('BananaData',BananaData)
 //const banana_id = 5
 
 //const el = document.querySelector('section');
+const el_signup_popup  = document.querySelector('section');
+const el_login_button  = document.querySelector('.item.login');
+const el_signup_button = document.querySelector('.item.signup');
+const el_login_popup_close  = document.querySelector('.login_popup .close');
+const el_signup_popup_close = document.querySelector('.signup_popup .close');
 //el.addEventListener('click'      , click_left);
 //el.addEventListener('contextmenu', click_right);
+el_login_button.addEventListener('click' , click_signup_button);
+el_signup_button.addEventListener('click', click_login_button);
+el_login_popup_close.addEventListener('click' , click_login_close);
+el_signup_popup_close.addEventListener('click', click_signup_close);
+
+function click_signup_button(ev){
+  console.debug('click_signup_button',ev)
+  ev.preventDefault()
+  const el_popup  = document.querySelector('.signup_popup');
+  el_popup.classList.add('popped')
+  return false
+}
+
+function click_login_button(ev){
+  console.debug('click_login_button',ev)
+  ev.preventDefault()
+  const el_popup  = document.querySelector('.login_popup');
+  el_popup.classList.add('popped')
+  return false
+}
+
+function click_signup_close(ev){
+  const el_popup  = document.querySelector('.signup_popup');
+  el_popup.classList.remove('popped')
+}
+
+function click_login_close(ev){
+  const el_popup  = document.querySelector('.login_popup');
+  el_popup.classList.remove('popped')
+}
+
 
 //async function click_left(ev){
   //const vector = {
