@@ -91,6 +91,61 @@ Now we can procced to creating our backend.
 
 ### 2. AWS Amplify Admin UI (Setting up Backend Infrastructure)
 
+#### 2.1 Setup Backend
+
+In the AWS Amplify console you need to go to Backend enviroments tab and
+click getting started
+
+> Warning, if you go to Admin management UI and turn on the Admin UI
+> from here it will not work, its just a confusing part of the UX.
+
+<img src='docs/admin_ui-000.png' width='60%' />
+
+#### 2.2 Wait for AWS Amplify Console to provision Admin UI
+
+Just wait a while here while AWS setups Admin UI for your use.
+Admin UI is a seperate application to provision AWS Infrastructure.
+
+<img src='docs/admin_ui-001.png' width='60%' />
+
+#### 2.3 Open Admin UI
+
+Once the Admin UI is provisioned you can launch it by going to Backend
+enviroment and choosing Open Admin UI
+
+<img src='docs/admin_ui-002.png' width='60%' />
+
+#### 2.4 Create Data Model
+
+We are going to want to store our banana data in DynamoDB.
+Go to `Data` and choose to create a `Model`
+
+<img src='docs/admin_ui-003.png' width='60%' />
+
+Name our model Banana with the following fields:
+
+- `vector` will store a json object containing our X, Y and Z coordinates of the user's banana
+- `cognito_uuid` will store the unique id generated for each cognito user
+
+<img src='docs/admin_ui-004.png' width='60%' />
+
+Click Save and Deploy, and cofirm again by pressing deploy
+
+<img src='docs/admin_ui-005.png' width='60%' />
+
+Wait for you data model to finish deploying.
+
+<img src='docs/admin_ui-006.png' width='60%' />
+
+<img src='docs/admin_ui-007.png' width='60%' />
+
+#### 2.4 Setup Authenication
+
+We want to use Amazon Cognito to authenicate with our web-application
+
+
+
+
 
 
 
