@@ -1,14 +1,25 @@
 const HtmlWebPackPlugin = require( 'html-webpack-plugin' );
 const path = require( 'path' );
 module.exports = {
-   context: __dirname,
-   entry: './src/index.js',
-   output: {
-      path: path.resolve( __dirname, 'dist' ),
-      filename: 'main.js',
-   },
+  context: __dirname,
+  entry: './src/index.js',
+  output: {
+    path: path.resolve( __dirname, 'dist' ),
+    filename: 'main.js',
+  },
+  resolve: {
+    fallback: {
+      "crypto": false
+    }
+  },
   module: {
     rules: [
+      {
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false
+        }
+      },
       {
         test: /\.(svg|jpg)$/i,
         use: ['file-loader']
@@ -24,9 +35,9 @@ module.exports = {
       }
     ]
   },
-   plugins: [
-      new HtmlWebPackPlugin({
-        template: './src/index.html'
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: './src/index.html'
     })
-   ]
+  ]
 }

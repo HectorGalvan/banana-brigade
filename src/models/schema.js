@@ -19,11 +19,10 @@ export const schema = {
                 },
                 "cognito_uuid": {
                     "name": "cognito_uuid",
-                    "isArray": true,
+                    "isArray": false,
                     "type": "String",
                     "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true
+                    "attributes": []
                 }
             },
             "syncable": true,
