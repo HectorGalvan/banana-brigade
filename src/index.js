@@ -19,16 +19,17 @@ console.log('BananaData',BananaData)
 //const hashnode_username = '@iamcloud'
 //const banana_id = 5
 
-//const el = document.querySelector('section');
-const el_signup_popup  = document.querySelector('section');
+let logged_in = false;
+
+const el_banana_board = document.querySelector('section');
 const el_login_button  = document.querySelector('.item.login');
 const el_signup_button = document.querySelector('.item.signup');
 const el_login_popup_close  = document.querySelector('.login_popup .close');
 const el_signup_popup_close = document.querySelector('.signup_popup .close');
-//el.addEventListener('click'      , click_left);
-//el.addEventListener('contextmenu', click_right);
-el_login_button.addEventListener('click' , click_signup_button);
-el_signup_button.addEventListener('click', click_login_button);
+el_banana_board.addEventListener('click'      , click_banana_board_left);
+el_banana_board.addEventListener('contextmenu', click_banana_board_right);
+el_login_button.addEventListener('click' , click_login_button);
+el_signup_button.addEventListener('click', click_signup_button);
 el_login_popup_close.addEventListener('click' , click_login_close);
 el_signup_popup_close.addEventListener('click', click_signup_close);
 
@@ -59,30 +60,32 @@ function click_login_close(ev){
 }
 
 
-//async function click_left(ev){
-  //const vector = {
-    //x: ev.pageX - offset_x,
-    //y: ev.pageY - offset_y,
-    //z: 1
-  //}
+async function click_banana_board_left(ev){
+  if (logged_in !== true) {return false; }
+  const vector = {
+    x: ev.pageX - offset_x,
+    y: ev.pageY - offset_y,
+    z: 1
+  }
 
-  //const bananas = await find_banana()
-  //console.log('bananas', bananas)
+  const bananas = await find_banana()
+  console.log('bananas', bananas)
 
-  //const old_banana = document.querySelector(`[data-banana_id='${banana_id}']`)
-  //if (old_banana){
-    //BananaElement.move(old_banana,vector)
-  //} else {
-    //BananaElement.render(vector)
-    ////create_banana(vector)
-  //}
-//}
+  const old_banana = document.querySelector(`[data-banana_id='${banana_id}']`)
+  if (old_banana){
+    BananaElement.move(old_banana,vector)
+  } else {
+    BananaElement.render(vector)
+    //create_banana(vector)
+  }
+}
 
-//function click_right(ev){
-  //ev.preventDefault()
-  //BananaElement.remove()
-  //return false
-/*}*/
+function click_banana_board_right(ev){
+  ev.preventDefault()
+  if (logged_in !== true) {return false; }
+  BananaElement.remove()
+  return false
+}
 
 async function render_bananas(){
   const bananas = await BananaData.all()
