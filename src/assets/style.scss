@@ -149,3 +149,25 @@ section {
     }
   }
 }
+
+.item.logout {
+  display: none;
+}
+.item.profile {
+  display: none;
+}
+
+body.logged_in {
+  .item.profile {
+    display: block;
+  }
+  .item.logout {
+    display: block;
+  }
+  .item.login {
+    display: none;
+  }
+  .item.signup {
+    display: none;
+  }
+}

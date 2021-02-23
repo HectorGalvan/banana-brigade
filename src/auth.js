@@ -17,11 +17,12 @@ export default class MyAuth {
     }
   }
 
-  static async log_in(email,password) {
+  static async log_in(email,password,fun_success,fun_error) {
     try {
       const user = await Auth.signIn(email, password);
+      fun_success(user)
     } catch (error) {
-      console.debug('error signing in', error);
+      fun_error(error)
     }
   }
 
@@ -43,7 +44,7 @@ export default class MyAuth {
     }
   }
 
-  static async current_session(fun_success,fun_eror){
+  static async current_session(fun_success,fun_error){
     try {
       const data = await Auth.currentSession()
       fun_success(dat)

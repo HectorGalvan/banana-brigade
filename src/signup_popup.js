@@ -8,6 +8,14 @@ el_signup_button.addEventListener('click', click_signup_button)
 el_signup_popup_close.addEventListener('click', click_signup_close)
 el_signup_submit.addEventListener('submit', signup_submit)
 
+function click_signup_button(ev){
+  console.debug('click_signup_button',ev)
+  ev.preventDefault()
+  const el_popup  = document.querySelector('.signup_popup');
+  el_popup.classList.add('popped')
+  return false
+}
+
 function click_signup_close(ev){
   const el_popup  = document.querySelector('.signup_popup');
   el_popup.classList.remove('popped')
@@ -41,10 +49,3 @@ function signup_error(error){
   el_err.innerHTML = error.message
 }
 
-function click_signup_button(ev){
-  console.debug('click_signup_button',ev)
-  ev.preventDefault()
-  const el_popup  = document.querySelector('.signup_popup');
-  el_popup.classList.add('popped')
-  return false
-}

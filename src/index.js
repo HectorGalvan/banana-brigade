@@ -25,6 +25,11 @@ Auth.current_user(current_user_success,current_user_error)
 
 function current_user_success(user){
   console.debug('current_user_success',user)
+  const hashnode_username = "@" + user.attributes.nickname
+  const el = document.querySelector('.item.profile')
+  el.innerHTML = hashnode_username
+  el.href = "https://hashnode.com/" + hashnode_username
+  document.body.classList.add('logged_in')
 }
 
 function current_user_error(error){
