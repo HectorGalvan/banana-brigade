@@ -144,6 +144,7 @@ Wait for you data model to finish deploying.
 We want to use Amazon Cognito to authenicate with our web-application
 
 We will leave "Add login mechanism" to email.
+
 <img src='docs/admin_ui-008.png' width='60%' />
 
 #### 2.5 Add Custom Attribute Nickname
