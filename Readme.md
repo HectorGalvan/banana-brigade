@@ -1,3 +1,8 @@
+- [Business Goal](#business-goal)
+- [Technical Goal](#technical-goal)
+- [Working in Development](#working-in-development)
+- [Provisioning Hosting, Backend and Deployment](#provisioning-hosting-backend-and-deployment)
+
 ![](docs/screenshot.png)
 
 ## Business Goal
@@ -20,7 +25,15 @@ Build a simple web-application that utilizes as much of the AWS Amplify Console 
 - Hosting — The frontend is hosted via the AWS Amplify Console
 - Frontend — The frontend is written in ES6 javascript, Scss and the Amplify Client, it was designed to be a simple use case to use Amplfiy without any javascript frameworks.
 
-## Development 
+## Working in Development 
+
+### Install Required Packages
+
+```
+npm i
+```
+
+### Running Local Web-server
 
 Start the webpack development server.
 
@@ -34,3 +47,6 @@ Visit the url [http://localhost:8080/](http://localhost:8080/)
 
 This web-application is using continuous deployment via AWS Amplify Console.
 When you push to main it will automatically trigger a deploy.
+
+## Provisioning Hosting, Backend and Deployment
+
