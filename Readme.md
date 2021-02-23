@@ -25,7 +25,7 @@ Build a simple web-application that utilizes as much of the AWS Amplify Console 
 - Hosting — The frontend is hosted via the AWS Amplify Console
 - Frontend — The frontend is written in ES6 javascript, Scss and the Amplify Client, it was designed to be a simple use case to use Amplfiy without any javascript frameworks.
 
-## Working in Development 
+## Working in Development
 
 ### Install Required Packages
 
@@ -143,12 +143,55 @@ Wait for you data model to finish deploying.
 
 We want to use Amazon Cognito to authenicate with our web-application
 
+We will leave "Add login mechanism" to email.
+<img src='docs/admin_ui-008.png' width='60%' />
+
+#### 2.5 Add Custom Attribute Nickname
+
+We will want to store the User's Hashnode username, so let us use the
+Nickname attribute
+
+<img src='docs/admin_ui-009.png' width='60%' />
+
+#### 2.6 Password Policy and Forgot Password
+
+Let us make the password policy very easy for users since this is a non
+critical app, where if someone were to access your account it wouldn't
+matter.
+
+We will switch Forget Password to Email since it is the cheaper option
+over SMS.
+
+Save and Deploy
+
+<img src='docs/admin_ui-010.png' width='60%' />
 
 
+We will wait for the deploy to finish
+
+<img src='docs/admin_ui-011.png' width='60%' />
 
 
+#### 2.7 Pull Amplify into Frontend application
+
+In order for our frontend web-application to reference our AWS Amplify
+backend we need an aws-exports.js.
+
+We can pull this information by clicking the link in the right corner
+taht shows our deployment status and copying the `amplify pull` commnad
+
+<img src='docs/admin_ui-012.png' width='60%' />
+
+When we run this command it will ask us a series of questions.
+
+The most important thing to remember is to choose `No` for do you plan
+on modifiying your backend. We don't want to pull backend code, because
+we want this to be low-code as possible.
+
+<img src='docs/admin_ui-013.png' width='60%' />
 
 
+Make sure your `aws-exports.js` is in your `src` directory
 
 
 ### Deployment
