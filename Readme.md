@@ -43,10 +43,9 @@ npm start
 
 Visit the url [http://localhost:8080/](http://localhost:8080/)
 
-## Deployment
+## Provisioning Hosting, Backend and Deployment
+
+### Deployment
 
 This web-application is using continuous deployment via AWS Amplify Console.
 When you push to main it will automatically trigger a deploy.
-
-## Provisioning Hosting, Backend and Deployment
-
