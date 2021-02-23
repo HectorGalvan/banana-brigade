@@ -1,3 +1,5 @@
+![](docs/screenshot.png)
+
 ## Business Goal
 
 When a logged out user visits the web-app, they can see a screen full of bananas.
