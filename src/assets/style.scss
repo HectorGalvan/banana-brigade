@@ -106,7 +106,7 @@ section {
   &.popped {
     display: flex;
   }
-  .popup_wrap {
+  form {
     width: 400px;
     background: rgb(255,255,255);
     padding: 24px;
@@ -143,6 +143,9 @@ section {
       padding: 8px 16px;
       border: none;
       border-radius: 2px;
+    }
+    .err {
+      color: rgb(200,0,0);
     }
   }
 }

@@ -15,7 +15,7 @@
             </div>
           </div>
           <a class='item login'  href="">Log In</a>
-          <a class='item signup' href="">Sign In</a>
+          <a class='item signup' href="">Sign Up</a>
         </nav>
         <div class='msg'>
         </div>
@@ -23,28 +23,30 @@
       <section>
       </section>
       <div class='signup_popup popup'>
-        <div class='popup_wrap'>
+        <form>
           <div class='popup_heading'>
             <h2>Sign Up</h2>
             <div class='close'>[close]</div>
           </div>
-          <input placeholder='Email' type="text" type='text' />
-          <input placeholder='Password' type="password" type='text' />
-          <input placeholder='Hashnode Username' type="password" type='text' />
+          <input type="text"     class='email'             placeholder='Email' />
+          <input type="password" class='password'          placeholder='Password'   />
+          <input type="text"     class='hashnode_username' placeholder='Hashnode Username' />
+          <div class='err'></div>
           <input type='submit' value='Signup' />
-        </div>
-      </div>
+        </form>
+      </div><!-- signup_popup -->
       <div class='login_popup popup'>
-        <div class='popup_wrap'>
+        <form>
           <div class='popup_heading'>
             <h2>Log In</h2>
             <div class='close'>[close]</div>
           </div>
-          <input placeholder='Email' type="text" type='text' />
-          <input placeholder='Password' type="password" type='text' />
+          <input type='text'     class='email'    placeholder='Email' />
+          <input type="password" class='password' placeholder='Password'  />
+          <div class='err'></div>
           <input type='submit' value='Login' />
-        </div>
-      </div>
+        </form>
+      </div><!-- login_popup -->
     </main>
   </body>
 </html>

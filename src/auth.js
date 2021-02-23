@@ -1,36 +1,55 @@
 import {Auth} from '@aws-amplify/auth';
 
-export class Sign {
-  static async sign_up() {
+export default class MyAuth {
+  static async sign_up(attrs,fun_success,fun_error) {
     try {
-        const { user } = await Auth.signUp({
-            username,
-            password,
-            attributes: {
-                email,          // optional
-                phone_number,   // optional - E.164 number convention
-                // other custom attributes 
-            }
-        });
-        console.log(user);
+      const { user } = await Auth.signUp({
+        username: attrs.email,
+        password: attrs.password,
+        attributes: {
+          email: attrs.email,
+          nickname: attrs.nickname
+        }
+      })
+      fun_success(user)
     } catch (error) {
-        console.log('error signing up:', error);
+      fun_error(error)
     }
   }
 
-  static async sign_in() {
+  static async log_in(email,password) {
     try {
-        const user = await Auth.signIn(username, password);
+      const user = await Auth.signIn(email, password);
     } catch (error) {
-        console.log('error signing in', error);
+      console.debug('error signing in', error);
     }
   }
 
-  static async sign_out() {
+  static async log_out() {
     try {
-        await Auth.signOut();
+      await Auth.signOut();
     } catch (error) {
-        console.log('error signing out: ', error);
+      console.debug('error signing out: ', error);
+    }
+  }
+
+  static async current_user(fun_success,fun_error){
+    try {
+      const data = await Auth.currentUserInfo()
+      fun_success(data)
+    } catch (error) {
+      console.log('error',error)
+      fun_error(error)
+    }
+  }
+
+  static async current_session(fun_success,fun_eror){
+    try {
+      const data = await Auth.currentSession()
+      fun_success(dat)
+    } catch (error) {
+      console.log('error',error)
+      fun_error(error)
     }
   }
 }
