@@ -50,8 +50,11 @@ header {
           top: 43px;
           right: 0px;
           border-top: none;
-          width: 320px;
-          height: 400px;
+          width: 420px;
+          z-index: 100;
+          li {
+            line-height: 1.6em;
+          }
         }
       }
       .dropdown {
