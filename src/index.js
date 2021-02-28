@@ -5,8 +5,8 @@ import "./assets/banana-leaf.jpg"
 
 // Amplify Configure
 import Amplify   from '@aws-amplify/core'
-import awsconfig from './aws-exports'
-Amplify.configure(awsconfig)
+// import awsconfig from './aws-exports'
+// Amplify.configure(awsconfig)
 
 // Authenicaation
 import Auth from './utils/auth'
