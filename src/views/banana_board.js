@@ -59,6 +59,7 @@ function click_banana_board_right(ev){
 }
 
 async function render_bananas(){
+  if (window.logged_in !== true) {return false;}
   const bananas = await BananaData.all()
   console.debug('render_bananas',bananas)
   for(let i=0; i < bananas.length; i++){

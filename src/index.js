@@ -26,23 +26,31 @@ window.hashnode_username = null
 Auth.current_user(current_user_success,current_user_error)
 
 function current_user_success(user){
-  window.logged_in = true
-  window.cognito_uuid = user.attributes.sub
-  window.hashnode_username = user.attributes.nickname
   console.debug('current_user_success',user)
-  const hashnode_username = "@" + user.attributes.nickname
-  const el = document.querySelector('.item.profile')
-  el.innerHTML = hashnode_username
-  el.href = "https://hashnode.com/" + hashnode_username
-  document.body.classList.add('logged_in')
-  document.body.classList.remove('logged_out')
+  if (user){
+    window.logged_in = true
+    window.cognito_uuid = user.attributes.sub
+    window.hashnode_username = user.attributes.nickname
+    const hashnode_username = "@" + user.attributes.nickname
+    const el = document.querySelector('.item.profile')
+    el.innerHTML = hashnode_username
+    el.href = "https://hashnode.com/" + hashnode_username
+    document.body.classList.add('logged_in')
+    document.body.classList.remove('logged_out')
+  } else {
+    window.logged_in = false
+    window.cognito_uuid = null
+    window.hashnode_username = null
+    document.body.classList.remove('logged_in')
+    document.body.classList.add('logged_out')
+  }
 }
 
 function current_user_error(error){
+  console.debug('current_user_error',error)
   window.logged_in = false
   window.cognito_uuid = null
   window.hashnode_username = null
-  console.debug('current_user_error',error)
   document.body.classList.remove('logged_in')
   document.body.classList.add('logged_out')
 }
