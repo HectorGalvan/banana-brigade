@@ -16,10 +16,6 @@ import './login_popup'
 import './signup_popup'
 import './banana_board'
 
-//const cognito_uuid = 'a34292304982402'
-//const hashnode_username = '@iamcloud'
-//const banana_id = 5
-
 // Hold the logged in / logged out state
 window.logged_in = false
 // Hold the reference to the current user
