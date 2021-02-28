@@ -22,7 +22,7 @@ export default class BananaElement {
 
     new_banana.appendChild(label)
 
-    const el =  document.querySelector('section');
+    const el =  document.querySelector('section.banana_board');
     el.appendChild(new_banana)
   }
 

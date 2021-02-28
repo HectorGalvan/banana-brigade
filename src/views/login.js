@@ -1,4 +1,4 @@
-import Auth from './auth'
+import Auth from '../utils/auth'
 
 const el_login_button  = document.querySelector('.item.login');
 const el_login_popup_close  = document.querySelector('.login_popup .close');
@@ -32,13 +32,19 @@ function login_submit(ev){
 }
 
 function login_success(user){
-  console.debug(user)
+  console.debug('login_success',user)
   const el_popup  = document.querySelector('.login_popup');
   el_popup.classList.remove('popped')
+
+  window.logged_in = true
+  window.cognito_uuid = user.attributes.sub
+  window.hashnode_username = user.attributes.nickname
+  document.body.classList.add('logged_in')
+  document.body.classList.remove('logged_out')
 }
 
 function login_error(error){
-  console.debug(error)
+  console.debug('loging_error', error)
   const el_err = document.querySelector('.login_popup .err')
   el_err.innerHTML = error.message
 }

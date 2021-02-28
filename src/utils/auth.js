@@ -26,9 +26,10 @@ export default class MyAuth {
     }
   }
 
-  static async log_out() {
+  static async log_out(success) {
     try {
       await Auth.signOut();
+      success()
     } catch (error) {
       console.debug('error signing out: ', error);
     }

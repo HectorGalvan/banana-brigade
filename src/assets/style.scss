@@ -15,7 +15,6 @@ main {
   flex-direction: column;
   height: 100%;
   width: 100%;
-  background: url('./banana-leaf.jpg');
 }
 
 header {
@@ -150,9 +149,30 @@ section {
   }
 }
 
+section.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .msg {
+    border: dashed 2px rgb(255,255,255,0.4);
+    background: rgba(0,0,0,0.6);
+    color: rgb(255,255,255,0.8);
+    border-radius: 999px;
+    padding: 24px 32px;
+    font-size: 18px;
+    span {
+      font-weight: 600;
+      color: rgb(255,255,0);
+    }
+  }
+}
+
 body.logged_out {
-  section {
+  section.banana_board {
     display: none;
+  }
+  main {
+    background: rgb(30,30,30);
   }
   .item.profile {
     display: none;
@@ -163,6 +183,12 @@ body.logged_out {
 }
 
 body.logged_in {
+  main {
+    background: url('./banana-leaf.jpg');
+  }
+  section.welcome {
+    display: none;
+  }
   .item.login {
     display: none;
   }

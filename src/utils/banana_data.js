@@ -1,5 +1,5 @@
 import {DataStore} from '@aws-amplify/datastore';
-import {Banana} from './models';
+import {Banana} from '../models';
 
 export default class BananaData {
   static async all(){

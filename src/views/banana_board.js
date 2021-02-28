@@ -1,7 +1,7 @@
-import BananaElement from './banana_element'
-import BananaData    from './banana_data'
+import BananaElement from '../utils/banana_element'
+import BananaData    from '../utils/banana_data'
 
-const el_banana_board = document.querySelector('section');
+const el_banana_board = document.querySelector('section.banana_board');
 el_banana_board.addEventListener('click'      , click_banana_board_left);
 el_banana_board.addEventListener('contextmenu', click_banana_board_right);
 

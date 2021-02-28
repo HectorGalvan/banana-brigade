@@ -9,12 +9,13 @@ import awsconfig from './aws-exports'
 Amplify.configure(awsconfig)
 
 // Authenicaation
-import Auth from './auth'
+import Auth from './utils/auth'
 
 // views
-import './login_popup'
-import './signup_popup'
-import './banana_board'
+import './views/logout'
+import './views/login'
+import './views/signup'
+import './views/banana_board'
 
 // Hold the logged in / logged out state
 window.logged_in = false
@@ -39,6 +40,8 @@ function current_user_success(user){
 
 function current_user_error(error){
   window.logged_in = false
+  window.cognito_uuid = null
+  window.hashnode_username = null
   console.debug('current_user_error',error)
   document.body.classList.remove('logged_in')
   document.body.classList.add('logged_out')
