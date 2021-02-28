@@ -1,7 +1,7 @@
 // assets
 import "./assets/style.scss"
-import './assets/banana.svg'
-import './assets/banana-leaf.jpg'
+import "./assets/banana.svg"
+import "./assets/banana-leaf.jpg"
 
 // Amplify Configure
 import Amplify   from '@aws-amplify/core'
