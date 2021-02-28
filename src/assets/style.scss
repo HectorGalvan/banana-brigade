@@ -150,20 +150,19 @@ section {
   }
 }
 
-.item.logout {
-  display: none;
-}
-.item.profile {
-  display: none;
+body.logged_out {
+  section {
+    display: none;
+  }
+  .item.profile {
+    display: none;
+  }
+  .item.logout {
+    display: none;
+  }
 }
 
 body.logged_in {
-  .item.profile {
-    display: block;
-  }
-  .item.logout {
-    display: block;
-  }
   .item.login {
     display: none;
   }

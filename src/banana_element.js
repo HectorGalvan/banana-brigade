@@ -1,20 +1,23 @@
 export default class BananaElement {
   static move(banana,vector){
+    console.debug('move', arguments)
     banana.style.top  = `${vector.y}px`
     banana.style.left = `${vector.x}px`
   }
 
-  static async render(hashnode_username,cognito_uuid,vector){
+  static async render(banana_id,hashnode_username,cognito_uuid,vector){
+    console.debug('render', arguments)
     const new_banana = document.createElement("div")
     new_banana.classList.add('banana')
     new_banana.style.top  = `${vector.y}px`
     new_banana.style.left = `${vector.x}px`
-    new_banana.dataset["cognito_uuid"] = cognito_uuid
+    new_banana.dataset.cognito_uuid = cognito_uuid
+    new_banana.dataset.banana_id    = banana_id
     //new_banana.dataset["banana_id"] = banana_id
 
     const label = document.createElement("div")
     label.classList.add('hashnode_username')
-    label.innerText = hashnode_username
+    label.innerText = "@" + hashnode_username
 
     new_banana.appendChild(label)
 
@@ -24,6 +27,7 @@ export default class BananaElement {
 
   static remove(){
     const banana = document.querySelector(`[data-cognito_uuid='${cognito_uuid}']:last-child`)
+    console.debug('remove',banana)
     banana.remove()
   }
 }
