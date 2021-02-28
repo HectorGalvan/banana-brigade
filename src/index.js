@@ -5,7 +5,20 @@ import "./assets/banana-leaf.jpg"
 
 // Amplify Configure
 import Amplify  from '@aws-amplify/core'
-import awsconfig from './aws-exports'
+// import awsconfig from './aws-exports'
+
+// Harcode!
+const awsconfig = {
+  "aws_project_region": "us-east-1",
+  "aws_appsync_graphqlEndpoint": "https://i2pmgh3v7vbjxocwjhquj7nk7i.appsync-api.us-east-1.amazonaws.com/graphql",
+  "aws_appsync_region": "us-east-1",
+  "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
+  "aws_cognito_identity_pool_id": "us-east-1:dd698710-3402-48f2-bc62-b6308dd230c7",
+  "aws_cognito_region": "us-east-1",
+  "aws_user_pools_id": "us-east-1_3ulbJHvda",
+  "aws_user_pools_web_client_id": "f25bbfk9ubc377v2h27vslt3s",
+  "oauth": {}
+};
 Amplify.configure(awsconfig)
 
 // Authenicaation
