@@ -15,7 +15,11 @@ import Auth from './utils/auth'
 import './views/logout'
 import './views/login'
 import './views/signup'
-import './views/banana_board'
+import BananaBoard from './views/banana_board'
+
+const el_banana_board = document.querySelector('section.banana_board');
+el_banana_board.addEventListener('click'      , BananaBoard.left_click);
+el_banana_board.addEventListener('contextmenu', BananaBoard.right_click);
 
 // Hold the logged in / logged out state
 window.logged_in = false
@@ -37,6 +41,7 @@ function current_user_success(user){
     el.href = "https://hashnode.com/" + hashnode_username
     document.body.classList.add('logged_in')
     document.body.classList.remove('logged_out')
+    BananaBoard.render()
   } else {
     window.logged_in = false
     window.cognito_uuid = null
