@@ -6,6 +6,8 @@ frontend:
         - npm ci
     build:
       commands:
+        - pwd
+        - aws s3 cp s3://bb-amplify-config/aws-exports.js src/aws-exports.js
         - amplifyPush --simple
         - npm run build
   artifacts:
