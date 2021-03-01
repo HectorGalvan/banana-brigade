@@ -17,6 +17,16 @@ export default class MyAuth {
     }
   }
 
+  static async verify(email,code,fun_success,fun_error) {
+    try {
+      await Auth.confirmSignUp(username, code);
+      fun_success()
+    } catch (error) {
+      console.log('error confirming sign up', error);
+      fun_error(error)
+    }
+  }
+
   static async log_in(email,password,fun_success,fun_error) {
     try {
       const user = await Auth.signIn(email, password);

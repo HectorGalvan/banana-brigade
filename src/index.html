@@ -30,6 +30,7 @@
           </div>
           <a class='item login'  href="">Log In</a>
           <a class='item signup' href="">Sign Up</a>
+          <a class='item verify' href="">Verify</a>
           <a class='item profile' target='_blank' href=""></a>
           <a class='item logout' href="">Log Out</a>
         </nav>
@@ -66,6 +67,18 @@
           <input type="password" class='field password' placeholder='Password'  />
           <div class='err'></div>
           <input type='submit' value='Login' />
+        </form>
+      </div><!-- login_popup -->
+      <div class='verify_popup popup'>
+        <form>
+          <div class='popup_heading'>
+            <h2>Log In</h2>
+            <div class='close'>[close]</div>
+          </div>
+          <input type='text'     class='field email' placeholder='Email' />
+          <input type="text" class='field verification_code' placeholder='Vertification Code'  />
+          <div class='err'></div>
+          <input type='submit' value='Verify Account' />
         </form>
       </div><!-- login_popup -->
     </main>

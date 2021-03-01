@@ -16,6 +16,7 @@ import Auth from './utils/auth'
 import './views/logout'
 import './views/login'
 import './views/signup'
+import './views/verify'
 import BananaBoard from './views/banana_board'
 
 const el_banana_board = document.querySelector('section.banana_board');
