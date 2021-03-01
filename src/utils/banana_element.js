@@ -26,8 +26,8 @@ export default class BananaElement {
     el.appendChild(new_banana)
   }
 
-  static remove(){
-    const banana = document.querySelector(`[data-cognito_uuid='${cognito_uuid}']:last-child`)
+  static remove(banana_id){
+    const banana = document.querySelector(`[data-banana-id='${banana_id}']:last-child`)
     console.debug('remove',banana)
     banana.remove()
   }

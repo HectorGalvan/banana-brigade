@@ -52,7 +52,10 @@ export default class BananaBoard {
     console.debug('BananaBoard.right_click',ev)
     ev.preventDefault()
     if (logged_in !== true) {return false;}
-    BananaElement.remove()
+    const banana_id = document.querySelector(`[data-cognito_uuid='${window.cognito_uuid}']:last-child`)
+    BananaData.remove(banana_id,function(){
+      BananaElement.remove()
+    })
     return false
   }
 

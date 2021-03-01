@@ -50,4 +50,15 @@ export default class BananaData {
       console.debug("update:error", error);
     }
   }
+
+  static async remove(banana_id,success){
+    console.debug('remove', banana_id)
+    const todelete = await DataStore.query(Banana, banana_id);
+    try {
+      await DataStore.delete(todelete)
+      success(banana_id)
+    } catch (error) {
+      console.debug("update:delete", error);
+    }
+  }
 }
