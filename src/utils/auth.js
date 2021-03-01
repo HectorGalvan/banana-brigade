@@ -19,7 +19,7 @@ export default class MyAuth {
 
   static async verify(email,code,fun_success,fun_error) {
     try {
-      await Auth.confirmSignUp(username, code);
+      await Auth.confirmSignUp(email, code);
       fun_success()
     } catch (error) {
       console.log('error confirming sign up', error);
