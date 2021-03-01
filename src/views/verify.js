@@ -25,14 +25,14 @@ function verify_submit(ev){
   ev.preventDefault()
   const email = document.querySelector('.verify_popup .email').value
   const code  = document.querySelector('.verify_popup .verification_code').value
-  console.debug(email,password)
-  Auth.confirmSignUp(email,code,verify_success,verify_error)
+  console.debug(email,code)
+  Auth.verify(email,code,verify_success,verify_error)
   console.debug('verify submit')
   return false
 }
 
-function verify_success(user){
-  console.debug('verify_success',user)
+function verify_success(){
+  console.debug('verify_success')
   const el_popup  = document.querySelector('.verify_popup');
   el_popup.classList.remove('popped')
 }
