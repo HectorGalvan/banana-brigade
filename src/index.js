@@ -5,9 +5,9 @@ import "./assets/banana-leaf.jpg"
 
 // Amplify Configure
 import Amplify  from '@aws-amplify/core'
-import awsconfig from './aws-exports'
+//import awsconfig from './aws-exports'
 
-Amplify.configure(awsconfig)
+//Amplify.configure(awsconfig)
 
 // Authenicaation
 import Auth from './utils/auth'
@@ -15,7 +15,7 @@ import Auth from './utils/auth'
 // views
 import './views/logout'
 import './views/login'
-import './views/signup' q
+import './views/signup'
 import './views/verify'
 import BananaBoard from './views/banana_board'
 
